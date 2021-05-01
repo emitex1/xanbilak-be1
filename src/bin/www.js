@@ -4,15 +4,15 @@
  * Module dependencies.
  */
 
-import app from '../app';
-//var debug = require('debug')('xanbilak-be1:server');
+// var debug = require('debug')('xanbilak-be1:server');
 import debug from 'debug';
 import http from 'http';
+import app from '../app';
 
 /**
  * Normalize a port into a number, string, or false.
  */
- const normalizePort = val => {
+const normalizePort = val => {
   const port = parseInt(val, 10);
   if (Number.isNaN(port)) {
     // named pipe
@@ -28,8 +28,8 @@ import http from 'http';
 /**
  * Get port from environment and store in Express.
  */
- const port = normalizePort(process.env.PORT || '800');
- app.set('port', port);
+const port = normalizePort(process.env.PORT || '800');
+app.set('port', port);
 
 /**
  * Create HTTP server.
@@ -39,23 +39,23 @@ const server = http.createServer(app);
 /**
  * Event listener for HTTP server "error" event.
  */
- const onError = error => {
+const onError = error => {
   if (error.syscall !== 'listen') {
     throw error;
   }
   const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      alert(`${bind} requires elevated privileges`);
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      alert(`${bind} is already in use`);
-      process.exit(1);
-      break;
-    default:
-      throw error;
+  case 'EACCES':
+    alert(`${bind} requires elevated privileges`);
+    process.exit(1);
+    break;
+  case 'EADDRINUSE':
+    alert(`${bind} is already in use`);
+    process.exit(1);
+    break;
+  default:
+    throw error;
   }
 };
 
