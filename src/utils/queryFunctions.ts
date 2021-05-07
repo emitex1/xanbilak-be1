@@ -5,7 +5,7 @@ import {
   createMessageTable,
 } from './queries';
 
-export const executeQueryArray = async arr => new Promise(resolve => {
+export const executeQueryArray = async (arr: Array<string>) => new Promise<void>(resolve => {
   const stop = arr.length;
   arr.forEach(async (q, index) => {
     await pool.query(q);

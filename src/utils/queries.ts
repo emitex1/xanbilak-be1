@@ -1,4 +1,4 @@
-export const createMessageTable = `
+export const createMessageTable: string = `
 DROP TABLE IF EXISTS messages;
 CREATE TABLE IF NOT EXISTS messages (
   id SERIAL PRIMARY KEY,
@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS messages (
   )
   `;
 
-export const insertMessages = `
+export const insertMessages: string = `
 INSERT INTO messages(name, message)
 VALUES ('Emad', 'first message'),
       ('Arian', 'second message')
 `;
 
-export const dropMessagesTable = 'DROP TABLE messages';
+export const dropMessagesTable: string = 'DROP TABLE messages';
