@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 // error handler
-app.use((err, req, res, next) => {
+app.use((err: any, req: any, res: any, next: any) => {
   res.status(err.status || 400).json({
     message: err && err.message ? err.message : 'Unknown Error',
     error: req.app.get('env') === 'development' ? err.stack : {}
