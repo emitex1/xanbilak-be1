@@ -6,7 +6,8 @@
       ".babelrc",
       ".prettierrc",
       ".env",
-      "src/"
+      "src",
+      "dist"
     ],
     "verbose": true,
     "ignore": ["*.test.js", "*.spec.js"]

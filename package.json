@@ -6,14 +6,17 @@
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
+
+    "build": "babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src",
+    "start:dev": "nodemon --exec babel-node ./dist/bin/www",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
+
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{ts,js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",
-    "runQuery": "babel-node ./src/utils/runQuery",
-    "build": "babel --delete-dir-on-start --out-dir dist --copy-files --ignore \"**/__tests__/**,**/__mocks__/**\" --no-copy-ignored src",
-    "start:dev": "nodemon dist/app.ts",
-    "build:dev": "tsc --watch --preserveWatchOutput",
-    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
+
+    "runQuery": "babel-node ./src/utils/runQuery"
   },
   "dependencies": {
     "axios": "^0.21.1",
