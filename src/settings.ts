@@ -10,4 +10,4 @@ dotenv.config();
 // console.log(result.parsed);
 
 export const testEnvironmentVariable: string | undefined = process.env.TEST_ENV_VARIABLE;
-export const connectionString: string | undefined = process.env.CONNECTION_STRING;
+export const connectionString: string | undefined = process.env.DATABASE_URL;
