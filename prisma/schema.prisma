@@ -1,8 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
+model shopping_items {
+  id          Int       @id
+  title       String
+  count       Int?
+  isBought    Boolean
+  description String?
+  createDate  DateTime  @db.Timestamptz(6)
+  updateDate  DateTime? @db.Timestamptz(6)
+  buyDate     DateTime? @db.Timestamptz(6)
 }
