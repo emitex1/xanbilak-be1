@@ -13,9 +13,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-var corsOptions = {
+/*var corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200 // For legacy browser support
+}*/
+var whitelist = ['http://localhost:3000', 'http://www.xanbilak.ir']
+var corsOptions = {
+  origin: function (origin: string, callback: any) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
 }
 app.use(cors(corsOptions));
 
