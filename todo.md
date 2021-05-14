@@ -1,6 +1,6 @@
 (A) Install prisma @config {cm:2021-05-08}
 (C) Remove extra scripts from package.json @config
-
-(A) Read shooping list from DB @dev 
-Install tslint @config
-Config tslint @config
+(A) Read shooping list from DB @dev  {cm:2021-05-14}
+(B) Install tslint @config
+(B) Config tslint @config
+(A) Create the shopping_item table from prisma & deploy it
