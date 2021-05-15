@@ -7,13 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model shopping_items {
-  id          Int       @id
+model ShoppingItems {
+  id          Int       @id @default(autoincrement())
   title       String
-  count       Int?
-  isBought    Boolean
+  count       Int?      @default(1)
+  isBought    Boolean   @default(false)
   description String?
-  createDate  DateTime  @db.Timestamptz(6)
-  updateDate  DateTime? @db.Timestamptz(6)
-  buyDate     DateTime? @db.Timestamptz(6)
+  createDate  DateTime  @default(now())
+  updateDate  DateTime?
+  buyDate     DateTime?
 }
