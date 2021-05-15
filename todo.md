@@ -3,4 +3,5 @@
 (A) Read shooping list from DB @dev  {cm:2021-05-14}
 (B) Install tslint @config
 (B) Config tslint @config
-(A) Create the shopping_item table from prisma & deploy it
+(A) Create the shopping_item table from prisma & deploy it {cm:2021-05-14}
+(B) npm i --save-dev \@types/cors {cm:2021-05-15}
