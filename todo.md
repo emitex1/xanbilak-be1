@@ -5,4 +5,4 @@
 (B) Config tslint @config
 (A) Create the shopping_item table from prisma & deploy it {cm:2021-05-14}
 (B) npm i --save-dev \@types/cors {cm:2021-05-15}
-(A) Create shopping item API
+(A) Create shopping item API {cm:2021-05-18}
