@@ -5,11 +5,13 @@ import { testEnvironmentVariable } from '../settings';
 //import { modifyMessage, performAsyncAction } from '../middleware';
 
 /** Controllers */
-import { readShoppingListItems } from '../controllers/shoppingItems';
+import { readShoppingListItems, createShoppingItem } from '../controllers/shoppingItems';
 
 const indexRouter = express.Router();
 
 indexRouter.get('/', (req, res) => res.status(200).json({ message: (`Welcome to Xanbilak 1st API, Message : ${testEnvironmentVariable}`) }));
 indexRouter.get('/shoppingList', readShoppingListItems);
+indexRouter.post('/shoppingItem/create', createShoppingItem);
+
 
 export default indexRouter;

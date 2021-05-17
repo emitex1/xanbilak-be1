@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ShoppingItems {
+model ShoppingItem {
   id          Int       @id @default(autoincrement())
   title       String
   count       Int?      @default(1)
