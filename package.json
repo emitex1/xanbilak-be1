@@ -16,7 +16,8 @@
     "pretty": "prettier --write '**/*.{ts,js,json}' '!node_modules/**'",
     "postpretty": "yarn lint --fix",
 
-    "runQuery": "babel-node ./src/utils/runQuery"
+    "runQuery": "babel-node ./src/utils/runQuery",
+    "insertInitialData": "ts-node ./scripts/insertInitialData.ts"
   },
   "dependencies": {
     "@prisma/client": "2.22.1",
