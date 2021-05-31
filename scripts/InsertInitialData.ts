@@ -151,9 +151,14 @@ const shoppingItemsData: BuyableItem[] = [
     },
 ]
 
-const insertInitialData = () => {
+const insertInitialData = async () => {
     const prisma = new PrismaClient();
 
+    // Delete previous shopping items
+    const deleteResult = await prisma.shoppingItem.deleteMany();
+    console.log('Delete Result=', deleteResult);
+
+    // Insert shopping items in the list
     shoppingItemsData.forEach( async (item, index) => {
         const result = await prisma.shoppingItem.create({
             data: {
@@ -167,7 +172,10 @@ const insertInitialData = () => {
         });
         console.log('#' + index + ':');
         console.log(result);
+        console.log('-------------------------');
     })
+
+    console.log('Finish inserting new items');
 }
 
 insertInitialData();
